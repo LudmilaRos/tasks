@@ -18,9 +18,16 @@ public class Task1 {
         driver.findElement(By.id("mtd_97")).click();
         driver.findElement(By.id("f_o_8_min")).sendKeys("6000");
         driver.findElement(By.id("f_o_8_max")).sendKeys("10000");
-        driver.findElement(By.id("f_o_18_min")).sendKeys("2006");
+        //driver.findElement(By.id("f_o_18_min")).sendKeys("2006");
         driver.findElement(By.id("f_o_15_min")).sendKeys("3.0");
-        driver.findElement(By.id("f_o_17")).sendKeys("Белый");
+        //driver.findElement(By.id("f_o_17")).sendKeys("Белый");
+
+        String name;
+        Select yearType = new Select(driver.findElement(By.cssSelector(name="topt[18][min]")));
+
+        yearType.selectByValue("2001");
+       // driver.findElement(By.id("f_o_1276_max")).sendKeys("5");
+
         WebElement submit = driver.findElement(By.id("Submit"));
         driver.quit();
 
