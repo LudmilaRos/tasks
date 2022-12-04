@@ -12,27 +12,29 @@ public class CarsPage extends BasePage {
     private static final By volumeSelector = By.cssSelector("select[name='topt[15][min]']");
     private static final By colorSelector = By.cssSelector("select[name='opt[17]']");
     private static final By submitButton = By.xpath("//input[@class='b s12']");
+    private static Select Volume;
+
     public void fillMinMaxAge(String min, String max) {
         driver.findElement(minYear).sendKeys(min);
         driver.findElement(maxYear).sendKeys(max);
     }
-    public static void fillMinMaxPrice(String min, String max) {
+    public  void fillMinMaxPrice(String min, String max) {
         driver.findElement(minPrice).sendKeys(min);
         driver.findElement(maxPrice).sendKeys(max);
     }
-    public static void fillMinMaxYear(String min, String max) {
+    public  void fillMinMaxYear(String min, String max) {
         driver.findElement(minYear).sendKeys(min);
         driver.findElement(maxYear).sendKeys(max);
     }
-    public static void changeVolume(String volumeValue) {
+    public  void changeVolume(String volumeValue) {
         Select dealType = new Select(driver.findElement(volumeSelector));
         if ("3.0".equals(volumeValue)) {
-            dealType.selectByValue("https://www.ss.com/lv/transport/cars/filter/");
+            Volume.selectByValue("3.0");
         } else {
             System.out.println("Something went wrong");
         }
     }
-    public static void changeVoColor(String colorValue) {
+    public  void changeColor(String colorValue) {
         Select dealType = new Select(driver.findElement(colorSelector));
         if ("Белый".equals(colorValue)) {
             dealType.selectByValue("https://www.ss.com/lv/transport/cars/filter/");
@@ -40,7 +42,7 @@ public class CarsPage extends BasePage {
             System.out.println("Something went wrong");
         }
     }
-    public static void pressSubmitButton() {
+    public  void pressSubmitButton() {
         driver.findElement(submitButton).click();
     }
 
