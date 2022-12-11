@@ -20,7 +20,8 @@ public class BasePage {
 
 
     public void stopDriver() {
-        driver.quit();
+
+            driver.quit();
     }
 }
 
