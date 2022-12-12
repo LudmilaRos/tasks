@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class SeleniumDemoTest1a {
-    BasePage basePage = new BasePage();
+   // BasePage basePage = new BasePage();
     HomePage homePage = new HomePage();
     FinalPage finalPage = new FinalPage();
     OrderPage orderPage = new OrderPage();
@@ -18,22 +18,23 @@ public class SeleniumDemoTest1a {
 
     @Before
     public void startChrome() {
-        basePage.openBaseUrl("https://www.1a.lv/");
+        homePage.openBaseUrl("https://www.1a.lv/");
     }
 
-    @After
-    public void endChrome() {
-        basePage.stopChrome();
-    }
+//    @After
+//    public void endChrome() {
+//        basePage.stopChrome();
+//    }
 
     @Test
    public void finalTest () throws InterruptedException {
         finalPage.checkMainPageLoaded();
         homePage.removeCookies();
         homePage.enterProductName();
-        homePage.chooseProduct();
-        finalPage.getFirstPriceAndName();
+      //  homePage.chooseProduct();
+        //finalPage.getFirstPriceAndName();
         homePage.addToCart();
+        finalPage.getFirstPriceAndName();
         homePage.closePopUp();
         homePage.switchToParent();
         homePage.goToCardPage();

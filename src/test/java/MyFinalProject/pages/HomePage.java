@@ -12,8 +12,6 @@ public class HomePage extends BasePage {
     private final By removeCookiesOnFirstPage = By.xpath("//a[@href='javascript:void(0)']");
     private final By enterSearchProduct = By.id("q");
     private final By pressSearchProduct = By.className("main-search-submit");
-   // private final By selectBrand = By.xpath(("//span[contains(text(), 'Apple')]/parent =: : a"));
-  // private final By selectProduct = By.xpath("//a[@data-sna-id='787175']");
    private final By selectProduct = By.xpath("//a[@data-gtm-link='787175']");
 
     private final By addToCardButton = By.id("add_to_cart_btn");
@@ -24,6 +22,9 @@ public class HomePage extends BasePage {
     private final By enterUnregisteredUEmail = By.id("user_email");
     private final By pressContinueButton = By.xpath("//form[@id='new_user_guest']//input[@class='users-session-form__submit']");
 
+    public  void openBaseUrl() {
+        driver.get(baseUrl);
+    }
  public void removeCookies() {
  driver.findElement(removeCookiesOnFirstPage).click();
  }
@@ -33,13 +34,16 @@ public class HomePage extends BasePage {
      driver.findElement(pressSearchProduct).click();
  }
 
- public void chooseProduct() throws InterruptedException {
-     //Thread.sleep(2000);
+// public void chooseProduct() throws InterruptedException {
+//     //Thread.sleep(2000);
+//     helper.scrollDown();
+//     Thread.sleep(2000);
+//     driver.findElement(selectProduct).click();
+ //}
+ public void addToCart() throws InterruptedException {
      helper.scrollDown();
      Thread.sleep(2000);
      driver.findElement(selectProduct).click();
- }
- public void addToCart() throws InterruptedException {
      helper.scrollDown();
      Thread.sleep(2000);
      driver.findElement(addToCardButton).click();
